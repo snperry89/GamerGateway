@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +235,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -255,6 +258,14 @@
     <ProjectReference Include="..\GamerGateway.Data\GamerGateway.Data.csproj">
       <Project>{F7B20326-9BC9-4B9D-8F50-E4059793B175}</Project>
       <Name>GamerGateway.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GamerGateway.Models\GamerGateway.Models.csproj">
+      <Project>{ce6fcfa6-0595-48f4-adfa-5e9d1bb573d9}</Project>
+      <Name>GamerGateway.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GamerGateway.Services\GamerGateway.Services.csproj">
+      <Project>{b5e39ada-8a73-4d5f-8c84-9dce572f4f26}</Project>
+      <Name>GamerGateway.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

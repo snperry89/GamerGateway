@@ -35,6 +35,8 @@ namespace GamerGateway.Data
         // This is where DbSets will go
         public DbSet<Game> Games { get; set; }
 
+        public DbSet<AccessType> AccessTypes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

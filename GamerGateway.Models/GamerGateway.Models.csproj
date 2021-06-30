@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessType\AccessTypeCreate.cs" />
+    <Compile Include="AccessType\AccessTypeDetail.cs" />
+    <Compile Include="AccessType\AccessTypeEdit.cs" />
+    <Compile Include="AccessType\AccessTypeListItem.cs" />
     <Compile Include="GameCreate.cs" />
     <Compile Include="GameDetail.cs" />
     <Compile Include="GameEdit.cs" />

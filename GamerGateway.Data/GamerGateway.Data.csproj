@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessType.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106291435282_InitialCreate.cs" />
@@ -71,6 +72,10 @@
     <Compile Include="Migrations\202106301342530_FixedGameConsoleEnum.cs" />
     <Compile Include="Migrations\202106301342530_FixedGameConsoleEnum.Designer.cs">
       <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301502019_AccessTypeExperiment.cs" />
+    <Compile Include="Migrations\202106301502019_AccessTypeExperiment.Designer.cs">
+      <DependentUpon>202106301502019_AccessTypeExperiment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106301342530_FixedGameConsoleEnum.resx">
       <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301502019_AccessTypeExperiment.resx">
+      <DependentUpon>202106301502019_AccessTypeExperiment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

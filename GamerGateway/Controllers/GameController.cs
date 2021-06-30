@@ -39,6 +39,46 @@ namespace GamerGateway.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var game = CreateGameService().GetGameDetailsById(id);
+            return View(game);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var game = CreateGameService().GetGameDetailsById(id);
+            return View(new GameEdit
+            {
+                GameId = game.GameId,
+                Name = game.Name,
+                GameConsole = game.GameConsole,
+                Price = game.Price
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, GameEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.GameId != id)
+            {
+                ModelState.AddModelError("", "Id mismatch");
+                return RedirectToAction("Index");
+            }
+
+            if (CreateGameService().UpdateGame(model))
+            {
+                TempData["Save Result"] = "Game updated";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Error adding a game");
+            return View(model);
+        }
+
         private GameService CreateGameService()
         {
             // Get current loggged in user

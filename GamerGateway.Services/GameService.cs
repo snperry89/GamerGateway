@@ -17,6 +17,21 @@ namespace GamerGateway.Services
             _userId = userId;
         }
 
+        public GameDetail GetGameDetailsById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var game = ctx.Games.Single(g => g.Id == id);
+                return new GameDetail
+                {
+                    GameId = game.Id,
+                    Name = game.Name,
+                    GameConsole = game.GameConsole,
+                    Price = game.Price
+                };
+            }
+        }
+
         public bool CreateGame(GameCreate model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -47,6 +62,20 @@ namespace GamerGateway.Services
 
                 return query.ToArray();
             }
+        }
+
+        public bool UpdateGame(GameEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var game = ctx.Games.Single(g => g.Id == model.GameId);
+                game.Name = model.Name;
+                game.GameConsole = model.GameConsole;
+                game.Price = model.Price;
+
+                return ctx.SaveChanges() == 1;
+            }
+
         }
     }
 }

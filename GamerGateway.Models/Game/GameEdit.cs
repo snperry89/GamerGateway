@@ -7,12 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using static GamerGateway.Data.Game;
 
-namespace GamerGateway.Models
+namespace GamerGateway.Models.Game
 {
-    public class GameCreate
+    public class GameEdit
     {
+        public int GameId { get; set; }
         [Required]
-        [MaxLength(50)]
         public string Name { get; set; }
         [Required]
         public GameConsole GameConsole { get; set; }

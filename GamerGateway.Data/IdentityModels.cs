@@ -34,6 +34,8 @@ namespace GamerGateway.Data
 
         // This is where DbSets will go
         public DbSet<Game> Games { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

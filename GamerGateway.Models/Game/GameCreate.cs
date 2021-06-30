@@ -7,13 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using static GamerGateway.Data.Game;
 
-namespace GamerGateway.Models
+namespace GamerGateway.Models.Game
 {
-    //public enum Console { PC, PS5, XboxSeriesX, Switch }
-    public class GameListItem
+    public class GameCreate
     {
-        public int GameId { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
         [Required]
         public GameConsole GameConsole { get; set; }

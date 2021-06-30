@@ -1,4 +1,5 @@
 ﻿using GamerGateway.Models;
+using GamerGateway.Models.Game;
 using GamerGateway.Services;
 using Microsoft.AspNet.Identity;
 using System;

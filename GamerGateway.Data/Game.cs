@@ -12,8 +12,10 @@ namespace GamerGateway.Data
     public class Game
     {
         // .Net will automatically detect this is primary key
+        [Key]
         public int Id { get; set; }
         [Required]
+        [Display(Name="Game Name")]
         public string Name { get; set; }
         [Required]
         public GameConsole GameConsole { get; set; }

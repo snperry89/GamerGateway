@@ -64,6 +64,14 @@
     <Compile Include="Migrations\202106291540162_InitialMigration.Designer.cs">
       <DependentUpon>202106291540162_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106301332257_AddedGameConsole.cs" />
+    <Compile Include="Migrations\202106301332257_AddedGameConsole.Designer.cs">
+      <DependentUpon>202106301332257_AddedGameConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301342530_FixedGameConsoleEnum.cs" />
+    <Compile Include="Migrations\202106301342530_FixedGameConsoleEnum.Designer.cs">
+      <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106291540162_InitialMigration.resx">
       <DependentUpon>202106291540162_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301332257_AddedGameConsole.resx">
+      <DependentUpon>202106301332257_AddedGameConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301342530_FixedGameConsoleEnum.resx">
+      <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

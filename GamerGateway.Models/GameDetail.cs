@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GamerGateway.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace GamerGateway.Services
     {
         public int GameId { get; set; }
         public string Name { get; set; }
-        public GamingConsole GameConsole { get; set; }
+        public GameConsole GameConsole { get; set; }
         public decimal Price { get; set; }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using GamerGateway.Data;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +13,11 @@ namespace GamerGateway.Models
     public class GameListItem
     {
         public int GameId { get; set; }
+        [Required]
         public string Name { get; set; }
-        public GamingConsole GameConsole { get; set; }
+        [Required]
+        public GameConsole GameConsole { get; set; }
+        [Required]
         public decimal Price { get; set; }
     }
 }

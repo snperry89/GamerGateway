@@ -72,10 +72,15 @@
     <Compile Include="Migrations\202106301342530_FixedGameConsoleEnum.Designer.cs">
       <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107011311330_NewMigration.cs" />
+    <Compile Include="Migrations\202107011311330_NewMigration.Designer.cs">
+      <DependentUpon>202107011311330_NewMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchase.cs" />
+    <Compile Include="Review.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -93,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106301342530_FixedGameConsoleEnum.resx">
       <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011311330_NewMigration.resx">
+      <DependentUpon>202107011311330_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

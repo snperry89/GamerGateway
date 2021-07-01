@@ -8,16 +8,10 @@ using System.Threading.Tasks;
 
 namespace GamerGateway.Data
 {
-    public class Purchase
+    public class Review
     {
         [Key]
-        public int PurchaseId { get; set; }
-
-        [Required]
-        public int OrderId { get; set; }
-
-        [ForeignKey(nameof(OrderId))]
-        public virtual Order Order { get; set; }
+        public int ReviewId { get; set; }
 
         [Required]
         public int GameId { get; set; }
@@ -25,10 +19,13 @@ namespace GamerGateway.Data
         [ForeignKey(nameof(GameId))]
         public virtual Game Game { get; set; }
 
+        // Make Decimal with one point
         [Required]
-        [Range(0, int.MaxValue, ErrorMessage = "The field {0} must be greater than {1}.")]
+        public int Rating { get; set; }
 
-        public int Quantity { get; set; }
+        public string Comment { get; set; }
 
+        [Display(Name = "Review Date")]
+        public DateTime ReviewDate { get; set; }
     }
 }

@@ -54,5 +54,10 @@
       <Name>GamerGateway.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Order\" />
+    <Folder Include="Purchase\" />
+    <Folder Include="Review\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

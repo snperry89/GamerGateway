@@ -48,7 +48,7 @@ namespace GamerGateway.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-       
+
         public IEnumerable<GameListItem> GetGameList()
         {
             using (var ctx = new ApplicationDbContext())
@@ -76,7 +76,22 @@ namespace GamerGateway.Services
 
                 return ctx.SaveChanges() == 1;
             }
+        }
 
+        // Testing Delete
+        public bool DeleteGame(int noteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Games
+                        .Single(e => e.Id == noteId && e.OwnerId == _userId);
+
+                ctx.Games.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }

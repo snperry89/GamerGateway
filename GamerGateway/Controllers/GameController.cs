@@ -14,6 +14,14 @@ namespace GamerGateway.Controllers
 {
     public class GameController : Controller
     {
+        private GameService CreateGameService()
+        {
+            // Get current loggged in user
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new GameService(userId);
+            return service;
+        }
+
         // GET: Game
         public ActionResult Index()
         {
@@ -107,12 +115,27 @@ namespace GamerGateway.Controllers
         //    return View(game);
         //}
 
-        private GameService CreateGameService()
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
         {
-            // Get current loggged in user
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new GameService(userId);
-            return service;
+            var svc = CreateGameService();
+            var model = svc.GetGameDetailsById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateGameService();
+
+            service.DeleteGame(id);
+
+            TempData["SaveResult"] = "Your note was deleted";
+
+            return RedirectToAction("Index");
         }
     }
 }

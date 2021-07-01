@@ -13,7 +13,7 @@ namespace GamerGateway.Data
     {
         // .Net will automatically detect this is primary key
         [Key]
-        public int Id { get; set; }
+        public int GameId { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }

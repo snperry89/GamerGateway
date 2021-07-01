@@ -25,7 +25,13 @@ namespace GamerGateway.Controllers
         // GET: Game
         public ActionResult Index()
         {
-            return View(CreateGameService().GetGameList());
+            //
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new GameService(userId);
+            var model = service.GetGameList();
+
+            return View(model);
+            //return View(CreateGameService().GetGameList());
         }
 
         // GET: Game

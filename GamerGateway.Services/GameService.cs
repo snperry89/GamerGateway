@@ -22,10 +22,10 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var game = ctx.Games.Single(g => g.Id == id);
+                var game = ctx.Games.Single(g => g.GameId == id);
                 return new GameDetail
                 {
-                    GameId = game.Id,
+                    GameId = game.GameId,
                     Name = game.Name,
                     GameConsole = game.GameConsole,
                     Price = game.Price
@@ -39,6 +39,7 @@ namespace GamerGateway.Services
             {
                 var newGame = new Game()
                 {
+                    OwnerId = _userId,
                     Name = model.Name,
                     GameConsole = model.GameConsole,
                     Price = model.Price
@@ -55,7 +56,7 @@ namespace GamerGateway.Services
             {
                 var query = ctx.Games.Select(g => new GameListItem
                 {
-                    GameId = g.Id,
+                    GameId = g.GameId,
                     Name = g.Name,
                     GameConsole = g.GameConsole,
                     Price = g.Price
@@ -69,7 +70,7 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var game = ctx.Games.Single(g => g.Id == model.GameId);
+                var game = ctx.Games.Single(g => g.GameId == model.GameId);
                 game.Name = model.Name;
                 game.GameConsole = model.GameConsole;
                 game.Price = model.Price;
@@ -79,14 +80,14 @@ namespace GamerGateway.Services
         }
 
         // Testing Delete
-        public bool DeleteGame(int noteId)
+        public bool DeleteGame(int gameId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Games
-                        .Single(e => e.Id == noteId && e.OwnerId == _userId);
+                        .Single(e => e.GameId == gameId && e.OwnerId == _userId);
 
                 ctx.Games.Remove(entity);
 

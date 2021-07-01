@@ -59,10 +59,16 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Orders.Select(g => new OrderListItem
+                var query = ctx.Orders.Select(o => new OrderListItem
                 {
-                    OrderId = g.OrderId,
-                    FullName = g.FullName,
+                    OrderId = o.OrderId,
+                    //FullName = o.FullName,
+                    FirstName = o.FirstName,
+                    LastName = o.LastName,
+                    Address = o.Address,
+                    City = o.City,
+                    State = o.State,
+                    ZipCode = o.ZipCode
                 });
 
                 return query.ToArray();

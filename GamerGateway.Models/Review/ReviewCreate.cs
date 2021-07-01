@@ -6,20 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GamerGateway.Data
+namespace GamerGateway.Models.Review
 {
-    public class Review
+    public class ReviewCreate
     {
-        [Key]
-        public int ReviewId { get; set; }
-
         [Required]
+        //[Display(nameof(GameId))]
         public int GameId { get; set; }
 
-        [ForeignKey(nameof(GameId))]
-        public virtual Game Game { get; set; }
+        //[ForeignKey(nameof(GameId))]
+        //public virtual List<Game> Games { get; set; }
 
-        // Make Decimal with one point
         [Required]
         public int Rating { get; set; }
 

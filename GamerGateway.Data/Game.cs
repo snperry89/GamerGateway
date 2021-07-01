@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GamerGateway.Data
 {
 
-    public enum GameConsole { PC, PS5, XboxSeriesX, Switch }
+    public enum GameConsole { PC, PS5, XboxSeriesX, NintendoSwitch }
     public class Game
     {
         // .Net will automatically detect this is primary key

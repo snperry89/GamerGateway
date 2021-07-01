@@ -22,8 +22,9 @@ namespace GamerGateway.Controllers
         // GET: Order
         public ActionResult Index()
         {
-            var model = new OrderListItem[0];
-            return View(model);
+            //var model = new OrderListItem[0];
+            //return View(model);
+            return View(CreateOrderService().GetOrderList());
         }
 
         public ActionResult Create()
@@ -40,11 +41,11 @@ namespace GamerGateway.Controllers
 
             if (CreateOrderService().CreateOrder(model))
             {
-                TempData["SaveResult"] = "Game added";
+                TempData["SaveResult"] = "Order added";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Error adding a game");
+            ModelState.AddModelError("", "Error adding an order");
             return View(model);
         }
 
@@ -87,7 +88,7 @@ namespace GamerGateway.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Error adding a game");
+            ModelState.AddModelError("", "Error updating order");
             return View(model);
         }
 

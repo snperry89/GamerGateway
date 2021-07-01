@@ -36,6 +36,7 @@ namespace GamerGateway.Data
         public DbSet<Game> Games { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

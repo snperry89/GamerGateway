@@ -27,7 +27,7 @@ namespace GamerGateway.Services
                     ReviewId = review.ReviewId,
                     Rating = review.Rating,
                     Comment = review.Comment,
-                    ReviewDate = review.ReviewDate,
+                    ReviewDate = (DateTimeOffset)review.ReviewDate,
                     GameId = review.GameId
                 };
             }
@@ -41,7 +41,7 @@ namespace GamerGateway.Services
                 {
                     Rating = model.Rating,
                     Comment = model.Comment,
-                    ReviewDate = model.ReviewDate,
+                    ReviewDate = DateTimeOffset.Now,
                     GameId = model.GameId
                 };
 
@@ -54,12 +54,15 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Reviews.Select(r => new ReviewListItem
+                var query = ctx.Reviews.
+                    //
+                    //.Where(r => r.OwnerId == _userId)
+                    Select(r => new ReviewListItem
                 {
                     ReviewId = r.ReviewId,
                     Rating = r.Rating,
                     Comment = r.Comment,
-                    ReviewDate = r.ReviewDate,
+                    //ReviewDate = (DateTimeOffset)r.ReviewDate,
                     GameId = r.GameId
                 });
 
@@ -74,7 +77,7 @@ namespace GamerGateway.Services
                 var review = ctx.Reviews.Single(g => g.ReviewId == model.ReviewId);
                 review.Rating = model.Rating;
                 review.Comment = model.Comment;
-                review.ReviewDate = model.ReviewDate;
+                review.ReviewDate = DateTimeOffset.Now;
                 review.GameId = model.GameId;
 
                 return ctx.SaveChanges() == 1;

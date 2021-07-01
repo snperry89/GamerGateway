@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202107011720316_PrimaryKeyNotWorking.Designer.cs">
       <DependentUpon>202107011720316_PrimaryKeyNotWorking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107012030013_AddedReviewDBO.cs" />
+    <Compile Include="Migrations\202107012030013_AddedReviewDBO.Designer.cs">
+      <DependentUpon>202107012030013_AddedReviewDBO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011720316_PrimaryKeyNotWorking.resx">
       <DependentUpon>202107011720316_PrimaryKeyNotWorking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107012030013_AddedReviewDBO.resx">
+      <DependentUpon>202107012030013_AddedReviewDBO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

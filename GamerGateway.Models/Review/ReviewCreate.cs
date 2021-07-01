@@ -22,7 +22,7 @@ namespace GamerGateway.Models.Review
 
         public string Comment { get; set; }
 
-        [Display(Name = "Review Date")]
-        public DateTimeOffset? ReviewDate { get; set; }
+        //[Display(Name = "Review Date")]
+        //public DateTimeOffset? ReviewDate { get; set; }
     }
 }

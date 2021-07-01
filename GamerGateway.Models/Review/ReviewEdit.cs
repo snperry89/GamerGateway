@@ -19,8 +19,8 @@ namespace GamerGateway.Models.Review
 
         public string Comment { get; set; }
 
-        [Required]
-        [Display(Name = "Review Date")]
-        public DateTimeOffset? ReviewDate { get; set; }
+        //[Required]
+        //[Display(Name = "Review Date")]
+        //public DateTimeOffset? ReviewDate { get; set; }
     }
 }

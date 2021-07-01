@@ -133,7 +133,7 @@ namespace GamerGateway.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteGameEntry(int id)
         {
             var service = CreateGameService();
 

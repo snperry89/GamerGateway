@@ -10,6 +10,14 @@ namespace GamerGateway.Services
 {
     public class OrderService
     {
+        // Do I need this
+        private readonly Guid _userId;
+
+        public OrderService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         public OrderDetail GetOrderDetailsById(int id)
         {
             using (var ctx = new ApplicationDbContext())

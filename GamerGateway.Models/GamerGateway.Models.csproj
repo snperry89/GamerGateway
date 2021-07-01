@@ -46,6 +46,10 @@
     <Compile Include="Game\GameDetail.cs" />
     <Compile Include="Game\GameEdit.cs" />
     <Compile Include="Game\GameListItem.cs" />
+    <Compile Include="Order\OrderCreate.cs" />
+    <Compile Include="Order\OrderDetail.cs" />
+    <Compile Include="Order\OrderEdit.cs" />
+    <Compile Include="Order\OrderListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,7 +59,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Order\" />
     <Folder Include="Purchase\" />
     <Folder Include="Review\" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using GamerGateway.Data;
+using GamerGateway.Models.Purchase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,13 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var game = ctx.Purchases.Single(g => g.PurchaseId == id);
+                var purchase = ctx.Purchases.Single(g => g.PurchaseId == id);
                 return new PurchaseDetail
                 {
-                    PurchaseId = game.PurchaseId,
-                    Name = game.Name,
-                    PurchaseConsole = game.PurchaseConsole,
-                    Price = game.Price
+                    PurchaseId = purchase.PurchaseId,
+                    OrderId = purchase.OrderId,
+                    GameId = purchase.GameId,
+                    Quantity = purchase.Quantity
                 };
             }
         }
@@ -37,10 +38,9 @@ namespace GamerGateway.Services
             {
                 var newPurchase = new Purchase()
                 {
-                    OwnerId = _userId,
-                    Name = model.Name,
-                    PurchaseConsole = model.PurchaseConsole,
-                    Price = model.Price
+                    OrderId = model.OrderId,
+                    GameId = model.GameId,
+                    Quantity = model.Quantity
                 };
 
                 ctx.Purchases.Add(newPurchase);
@@ -52,12 +52,12 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Purchases.Select(g => new PurchaseListItem
+                var query = ctx.Purchases.Select(p => new PurchaseListItem
                 {
-                    PurchaseId = g.PurchaseId,
-                    Name = g.Name,
-                    PurchaseConsole = g.PurchaseConsole,
-                    Price = g.Price
+                    PurchaseId = p.PurchaseId,
+                    OrderId = p.OrderId,
+                    GameId = p.GameId,
+                    Quantity = p.Quantity
                 });
 
                 return query.ToArray();
@@ -68,24 +68,24 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var game = ctx.Purchases.Single(g => g.PurchaseId == model.PurchaseId);
-                game.Name = model.Name;
-                game.PurchaseConsole = model.PurchaseConsole;
-                game.Price = model.Price;
+                var purchase = ctx.Purchases.Single(g => g.PurchaseId == model.PurchaseId);
+                purchase.OrderId = model.OrderId;
+                purchase.GameId = model.GameId;
+                purchase.Quantity = model.Quantity;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
         // Testing Delete
-        public bool DeletePurchase(int gameId)
+        public bool DeletePurchase(int purchaseId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Purchases
-                        .Single(e => e.PurchaseId == gameId && e.OwnerId == _userId);
+                        .Single(e => e.PurchaseId == purchaseId /*&& e.OwnerId == _userId)*/);
 
                 ctx.Purchases.Remove(entity);
 

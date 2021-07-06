@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using GamerGateway.Models.Purchase;
+using GamerGateway.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +28,6 @@ namespace GamerGateway.Controllers
             var model = service.GetPurchaseList();
 
             return View(model);
-            //return View(CreateGameService().GetGameList());
         }
 
         // GET: Purchase
@@ -34,6 +35,93 @@ namespace GamerGateway.Controllers
         {
             ViewBag.Title = "New Purchase";
             return View();
+        }
+
+        // POST: Game
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(PurchaseCreate model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (CreatePurchaseService().CreatePurchase(model))
+            {
+                TempData["SaveResult"] = "Item added to cart";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Error adding a purchase");
+            return View(model);
+        }
+
+        // GET: Details
+        // Purchase/Details/{id}
+        public ActionResult Details(int id)
+        {
+            var purchase = CreatePurchaseService().GetPurchaseDetailsById(id);
+            return View(purchase);
+        }
+
+        // GET: Edit
+        // Purchase/Edit/{id}
+        public ActionResult Edit(int id)
+        {
+            var purchase = CreatePurchaseService().GetPurchaseDetailsById(id);
+            return View(new PurchaseEdit
+            {
+                PurchaseId = purchase.PurchaseId,
+                GameId = purchase.GameId,
+                OrderId = purchase.OrderId,
+                Quantity = purchase.Quantity
+            });
+        }
+
+        // POST: Edit
+        // Purchase/Edit/{id}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PurchaseEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.PurchaseId != id)
+            {
+                ModelState.AddModelError("", "Id mismatch");
+                return RedirectToAction("Index");
+            }
+
+            if (CreatePurchaseService().UpdatePurchase(model))
+            {
+                TempData["Save Result"] = "Purchase updated";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Error adding a purchase");
+            return View(model);
+        }
+
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreatePurchaseService();
+            var model = svc.GetPurchaseDetailsById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePurchaseEntry(int id)
+        {
+            var service = CreatePurchaseService();
+
+            service.DeletePurchase(id);
+
+            TempData["SaveResult"] = "Your note was deleted";
+
+            return RedirectToAction("Index");
         }
 
 

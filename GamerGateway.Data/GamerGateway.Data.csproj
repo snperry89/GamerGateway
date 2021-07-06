@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202107061405340_ChangedDateNames.Designer.cs">
       <DependentUpon>202107061405340_ChangedDateNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061647597_PurchasesAdded.cs" />
+    <Compile Include="Migrations\202107061647597_PurchasesAdded.Designer.cs">
+      <DependentUpon>202107061647597_PurchasesAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107061405340_ChangedDateNames.resx">
       <DependentUpon>202107061405340_ChangedDateNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061647597_PurchasesAdded.resx">
+      <DependentUpon>202107061647597_PurchasesAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

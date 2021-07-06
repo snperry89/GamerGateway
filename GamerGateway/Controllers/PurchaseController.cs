@@ -53,8 +53,14 @@ namespace GamerGateway.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PurchaseCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
-
+            if (!ModelState.IsValid)
+            // Testing
+            {
+                ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+                ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
+                ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
+                return View(model);
+            }
             if (CreatePurchaseService().CreatePurchase(model))
             {
                 TempData["SaveResult"] = "Item added to cart";
@@ -62,6 +68,12 @@ namespace GamerGateway.Controllers
             }
 
             ModelState.AddModelError("", "Error adding a purchase");
+
+            // Testing
+
+            //ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+            //ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
+            //ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
             return View(model);
         }
 
@@ -78,6 +90,7 @@ namespace GamerGateway.Controllers
         public ActionResult Edit(int id)
         {
             var purchase = CreatePurchaseService().GetPurchaseDetailsById(id);
+
             return View(new PurchaseEdit
             {
                 PurchaseId = purchase.PurchaseId,
@@ -93,7 +106,14 @@ namespace GamerGateway.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, PurchaseEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+                ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
+                ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
+
+                return View(model);
+            }
 
             if (model.PurchaseId != id)
             {
@@ -106,6 +126,10 @@ namespace GamerGateway.Controllers
                 TempData["Save Result"] = "Purchase updated";
                 return RedirectToAction("Index");
             }
+
+            //ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+            //ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
+            //ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
 
             ModelState.AddModelError("", "Error adding a purchase");
             return View(model);
@@ -130,7 +154,7 @@ namespace GamerGateway.Controllers
 
             service.DeletePurchase(id);
 
-            TempData["SaveResult"] = "Your note was deleted";
+            TempData["SaveResult"] = "Your purchase was deleted";
 
             return RedirectToAction("Index");
         }

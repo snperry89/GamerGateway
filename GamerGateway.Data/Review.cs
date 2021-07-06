@@ -14,10 +14,13 @@ namespace GamerGateway.Data
         public int ReviewId { get; set; }
 
         [Required]
-        public int GameId { get; set; }
+        public int? GameId { get; set; }
 
         [ForeignKey(nameof(GameId))]
         public virtual Game Game { get; set; }
+
+        // Testing
+        public virtual List<Game> Games { get; set; }
 
         // Make Decimal with one point
         [Required]

@@ -12,9 +12,10 @@ namespace GamerGateway.Models.Review
         public int ReviewId { get; set; }
 
         [Required]
-        public int GameId { get; set; }
+        public int? GameId { get; set; }
 
         [Required]
+        [Range(0, 5, ErrorMessage = "Value must be between 0-5")]
         public int Rating { get; set; }
 
         public string Comment { get; set; }

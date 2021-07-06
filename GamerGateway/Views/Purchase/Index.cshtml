@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Customer Purchases</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,6 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.GameId)
         </th>
+        @*<th>
+            @Html.
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
@@ -41,9 +44,9 @@
             @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.PurchaseId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PurchaseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PurchaseId })
         </td>
     </tr>
 }

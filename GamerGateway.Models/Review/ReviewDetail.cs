@@ -11,7 +11,7 @@ namespace GamerGateway.Models.Review
     {
         public int ReviewId { get; set; }
 
-        public int GameId { get; set; }
+        public int? GameId { get; set; }
 
         public int Rating { get; set; }
 

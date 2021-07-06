@@ -1,4 +1,5 @@
-﻿using GamerGateway.Models.Review;
+﻿using GamerGateway.Data;
+using GamerGateway.Models.Review;
 using GamerGateway.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -11,6 +12,7 @@ namespace GamerGateway.Controllers
 {
     public class ReviewController : Controller
     {
+        ApplicationDbContext _db = new ApplicationDbContext();
         private ReviewService CreateReviewService()
         {
             // Get current loggged in user
@@ -30,6 +32,7 @@ namespace GamerGateway.Controllers
         public ActionResult Create()
         {
             ViewBag.Title = "New Review";
+            ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
             return View();
         }
 

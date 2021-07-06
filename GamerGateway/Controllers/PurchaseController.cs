@@ -1,4 +1,5 @@
-﻿using GamerGateway.Models.Purchase;
+﻿using GamerGateway.Data;
+using GamerGateway.Models.Purchase;
 using GamerGateway.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -11,6 +12,9 @@ namespace GamerGateway.Controllers
 {
     public class PurchaseController : Controller
     {
+        // Testing
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         private PurchaseService CreatePurchaseService()
         {
             // Get current loggged in user
@@ -33,11 +37,18 @@ namespace GamerGateway.Controllers
         // GET: Purchase
         public ActionResult Create()
         {
-            ViewBag.Title = "New Purchase";
+            // Testing 
+            ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+            ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
+            // Not Sure
+            ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
+
+
+            //ViewBag.Title = "New Purchase";
             return View();
         }
 
-        // POST: Game
+        // POST: Purchase
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(PurchaseCreate model)

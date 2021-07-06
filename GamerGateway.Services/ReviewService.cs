@@ -21,13 +21,14 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var review = ctx.Reviews.Single(g => g.ReviewId == id);
+                var review = ctx.Reviews.Single(r => r.ReviewId == id);
                 return new ReviewDetail
                 {
                     ReviewId = review.ReviewId,
                     Rating = review.Rating,
                     Comment = review.Comment,
-                    ReviewDate = (DateTimeOffset)review.ReviewDate,
+                    CreatedUtc = review.CreatedUtc,
+                    ModifiedUtc = review.ModifiedUtc,
                     GameId = review.GameId
                 };
             }
@@ -41,7 +42,7 @@ namespace GamerGateway.Services
                 {
                     Rating = model.Rating,
                     Comment = model.Comment,
-                    ReviewDate = DateTimeOffset.Now,
+                    CreatedUtc = DateTimeOffset.Now,
                     GameId = model.GameId
                 };
 
@@ -58,13 +59,13 @@ namespace GamerGateway.Services
                     //
                     //.Where(r => r.OwnerId == _userId)
                     Select(r => new ReviewListItem
-                {
-                    ReviewId = r.ReviewId,
-                    Rating = r.Rating,
-                    Comment = r.Comment,
-                    //ReviewDate = (DateTimeOffset)r.ReviewDate,
-                    GameId = r.GameId
-                });
+                    {
+                        ReviewId = r.ReviewId,
+                        Rating = r.Rating,
+                        Comment = r.Comment,
+                        CreatedUtc = r.CreatedUtc,
+                        GameId = r.GameId
+                    });
 
                 return query.ToArray();
             }
@@ -77,7 +78,7 @@ namespace GamerGateway.Services
                 var review = ctx.Reviews.Single(g => g.ReviewId == model.ReviewId);
                 review.Rating = model.Rating;
                 review.Comment = model.Comment;
-                review.ReviewDate = DateTimeOffset.Now;
+                review.CreatedUtc = DateTimeOffset.Now;
                 review.GameId = model.GameId;
 
                 return ctx.SaveChanges() == 1;

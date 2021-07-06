@@ -56,37 +56,13 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106291435282_InitialCreate.cs" />
-    <Compile Include="Migrations\202106291435282_InitialCreate.Designer.cs">
-      <DependentUpon>202106291435282_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202107061355369_InitialCreate.cs" />
+    <Compile Include="Migrations\202107061355369_InitialCreate.Designer.cs">
+      <DependentUpon>202107061355369_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106291540162_InitialMigration.cs" />
-    <Compile Include="Migrations\202106291540162_InitialMigration.Designer.cs">
-      <DependentUpon>202106291540162_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106301332257_AddedGameConsole.cs" />
-    <Compile Include="Migrations\202106301332257_AddedGameConsole.Designer.cs">
-      <DependentUpon>202106301332257_AddedGameConsole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106301342530_FixedGameConsoleEnum.cs" />
-    <Compile Include="Migrations\202106301342530_FixedGameConsoleEnum.Designer.cs">
-      <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011311330_NewMigration.cs" />
-    <Compile Include="Migrations\202107011311330_NewMigration.Designer.cs">
-      <DependentUpon>202107011311330_NewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011644197_AddedGuid.cs" />
-    <Compile Include="Migrations\202107011644197_AddedGuid.Designer.cs">
-      <DependentUpon>202107011644197_AddedGuid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011720316_PrimaryKeyNotWorking.cs" />
-    <Compile Include="Migrations\202107011720316_PrimaryKeyNotWorking.Designer.cs">
-      <DependentUpon>202107011720316_PrimaryKeyNotWorking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107012030013_AddedReviewDBO.cs" />
-    <Compile Include="Migrations\202107012030013_AddedReviewDBO.Designer.cs">
-      <DependentUpon>202107012030013_AddedReviewDBO.cs</DependentUpon>
+    <Compile Include="Migrations\202107061405340_ChangedDateNames.cs" />
+    <Compile Include="Migrations\202107061405340_ChangedDateNames.Designer.cs">
+      <DependentUpon>202107061405340_ChangedDateNames.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -99,29 +75,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106291435282_InitialCreate.resx">
-      <DependentUpon>202106291435282_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107061355369_InitialCreate.resx">
+      <DependentUpon>202107061355369_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291540162_InitialMigration.resx">
-      <DependentUpon>202106291540162_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106301332257_AddedGameConsole.resx">
-      <DependentUpon>202106301332257_AddedGameConsole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106301342530_FixedGameConsoleEnum.resx">
-      <DependentUpon>202106301342530_FixedGameConsoleEnum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011311330_NewMigration.resx">
-      <DependentUpon>202107011311330_NewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011644197_AddedGuid.resx">
-      <DependentUpon>202107011644197_AddedGuid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011720316_PrimaryKeyNotWorking.resx">
-      <DependentUpon>202107011720316_PrimaryKeyNotWorking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107012030013_AddedReviewDBO.resx">
-      <DependentUpon>202107012030013_AddedReviewDBO.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107061405340_ChangedDateNames.resx">
+      <DependentUpon>202107061405340_ChangedDateNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

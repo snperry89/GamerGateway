@@ -25,7 +25,10 @@ namespace GamerGateway.Data
 
         public string Comment { get; set; }
 
+        [Required]
         [Display(Name = "Review Date")]
-        public DateTimeOffset? ReviewDate { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

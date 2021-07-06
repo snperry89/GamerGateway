@@ -8,6 +8,63 @@ namespace GamerGateway.Data.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Game",
+                c => new
+                    {
+                        GameId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        Name = c.String(nullable: false),
+                        GameConsole = c.Int(nullable: false),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Discount = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.GameId);
+            
+            CreateTable(
+                "dbo.Order",
+                c => new
+                    {
+                        OrderId = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        Address = c.String(nullable: false),
+                        City = c.String(nullable: false),
+                        State = c.String(nullable: false),
+                        ZipCode = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.OrderId);
+            
+            CreateTable(
+                "dbo.Purchase",
+                c => new
+                    {
+                        PurchaseId = c.Int(nullable: false, identity: true),
+                        OrderId = c.Int(nullable: false),
+                        GameId = c.Int(nullable: false),
+                        Quantity = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PurchaseId)
+                .ForeignKey("dbo.Game", t => t.GameId, cascadeDelete: true)
+                .ForeignKey("dbo.Order", t => t.OrderId, cascadeDelete: true)
+                .Index(t => t.OrderId)
+                .Index(t => t.GameId);
+            
+            CreateTable(
+                "dbo.Review",
+                c => new
+                    {
+                        ReviewId = c.Int(nullable: false, identity: true),
+                        GameId = c.Int(nullable: false),
+                        Rating = c.Int(nullable: false),
+                        Comment = c.String(),
+                        ReviewDate = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedDate = c.DateTimeOffset(precision: 7),
+                    })
+                .PrimaryKey(t => t.ReviewId)
+                .ForeignKey("dbo.Game", t => t.GameId, cascadeDelete: true)
+                .Index(t => t.GameId);
+            
+            CreateTable(
                 "dbo.IdentityRole",
                 c => new
                     {
@@ -85,15 +142,25 @@ namespace GamerGateway.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Review", "GameId", "dbo.Game");
+            DropForeignKey("dbo.Purchase", "OrderId", "dbo.Order");
+            DropForeignKey("dbo.Purchase", "GameId", "dbo.Game");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Review", new[] { "GameId" });
+            DropIndex("dbo.Purchase", new[] { "GameId" });
+            DropIndex("dbo.Purchase", new[] { "OrderId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Review");
+            DropTable("dbo.Purchase");
+            DropTable("dbo.Order");
+            DropTable("dbo.Game");
         }
     }
 }

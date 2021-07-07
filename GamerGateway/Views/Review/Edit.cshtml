@@ -13,9 +13,10 @@
     <div class="form-horizontal">
         <h4>Edit Reviews</h4>
         <hr />
-        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         @Html.HiddenFor(model => model.ReviewId)
+        @Html.HiddenFor(model => model.GameId)
         @*<div class="form-group">
                 @Html.LabelFor(model => model.ReviewId, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">

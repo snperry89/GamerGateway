@@ -6,11 +6,13 @@ using System.Web;
 using System.Web.Mvc;
 using GamerGateway.Services;
 using Microsoft.AspNet.Identity;
+using GamerGateway.Data;
 
 namespace GamerGateway.Controllers
 {
     public class OrderController : Controller
     {
+        ApplicationDbContext _db = new ApplicationDbContext();
         private OrderService CreateOrderService()
         {
             // Get current loggged in user

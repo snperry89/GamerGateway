@@ -75,8 +75,14 @@ namespace GamerGateway.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ReviewEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
-
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Select(x => x.Value.Errors)
+                    .Where(y => y.Count > 0)
+                    .ToList();
+                ModelState.AddModelError("", "Something went wrong");
+                return View(model);
+            }
             if (model.ReviewId != id)
             {
                 ModelState.AddModelError("", "Id mismatch");

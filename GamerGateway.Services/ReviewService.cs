@@ -29,7 +29,7 @@ namespace GamerGateway.Services
                     Comment = review.Comment,
                     CreatedUtc = review.CreatedUtc,
                     ModifiedUtc = review.ModifiedUtc,
-                    //GameId = review.GameId,
+                    GameId = review.GameId,
                     GameName = review.Game.Name
                 };
             }
@@ -66,7 +66,7 @@ namespace GamerGateway.Services
                         Comment = r.Comment,
                         CreatedUtc = r.CreatedUtc,
                         ModifiedUtc = r.ModifiedUtc,
-                        //GameId = r.GameId,
+                        GameId = r.GameId,
                         GameName = r.Game.Name
                     });
 
@@ -78,7 +78,8 @@ namespace GamerGateway.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var review = ctx.Reviews.Single(g => g.ReviewId == model.ReviewId);
+                var review = ctx.Reviews.Single(r => r.ReviewId == model.ReviewId);
+                review.ReviewId = model.ReviewId;
                 review.Rating = model.Rating;
                 review.Comment = model.Comment;
                 review.ModifiedUtc = DateTimeOffset.Now;

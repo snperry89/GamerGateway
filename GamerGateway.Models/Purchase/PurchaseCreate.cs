@@ -10,9 +10,11 @@ namespace GamerGateway.Models.Purchase
     public class PurchaseCreate
     {
         [Required]
+        [Display(Name = "Customer")]
         public int OrderId { get; set; }
 
         [Required]
+        [Display(Name = "Game")]
         public int GameId { get; set; }
 
         [Required]

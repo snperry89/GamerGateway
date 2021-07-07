@@ -56,21 +56,13 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202107061355369_InitialCreate.cs" />
-    <Compile Include="Migrations\202107061355369_InitialCreate.Designer.cs">
-      <DependentUpon>202107061355369_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202107070034072_InitialCreate.cs" />
+    <Compile Include="Migrations\202107070034072_InitialCreate.Designer.cs">
+      <DependentUpon>202107070034072_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107061405340_ChangedDateNames.cs" />
-    <Compile Include="Migrations\202107061405340_ChangedDateNames.Designer.cs">
-      <DependentUpon>202107061405340_ChangedDateNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061647597_PurchasesAdded.cs" />
-    <Compile Include="Migrations\202107061647597_PurchasesAdded.Designer.cs">
-      <DependentUpon>202107061647597_PurchasesAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061937566_UpdatedPurchasesView.cs" />
-    <Compile Include="Migrations\202107061937566_UpdatedPurchasesView.Designer.cs">
-      <DependentUpon>202107061937566_UpdatedPurchasesView.cs</DependentUpon>
+    <Compile Include="Migrations\202107070052362_AddedReviewModified.cs" />
+    <Compile Include="Migrations\202107070052362_AddedReviewModified.Designer.cs">
+      <DependentUpon>202107070052362_AddedReviewModified.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -83,17 +75,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107061355369_InitialCreate.resx">
-      <DependentUpon>202107061355369_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070034072_InitialCreate.resx">
+      <DependentUpon>202107070034072_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061405340_ChangedDateNames.resx">
-      <DependentUpon>202107061405340_ChangedDateNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061647597_PurchasesAdded.resx">
-      <DependentUpon>202107061647597_PurchasesAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061937566_UpdatedPurchasesView.resx">
-      <DependentUpon>202107061937566_UpdatedPurchasesView.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070052362_AddedReviewModified.resx">
+      <DependentUpon>202107070052362_AddedReviewModified.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

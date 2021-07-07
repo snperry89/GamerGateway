@@ -18,20 +18,36 @@
             @Html.DisplayFor(model => model.PurchaseId)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.OrderId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.OrderId)
-        </dd>
+        </dd>*@
 
         <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        @*<dt>
             @Html.DisplayNameFor(model => model.GameId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.GameId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameName)
         </dd>
 
         <dt>
@@ -45,6 +61,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

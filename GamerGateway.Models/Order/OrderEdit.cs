@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GamerGateway.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace GamerGateway.Models.Order
         public string City { get; set; }
 
         [Required]
-        public string State { get; set; }
+        public State State { get; set; }
 
         [Required]
         public string ZipCode { get; set; }

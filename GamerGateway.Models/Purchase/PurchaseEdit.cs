@@ -12,15 +12,20 @@ namespace GamerGateway.Models.Purchase
         public int PurchaseId { get; set; }
 
         [Required]
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
 
         [Required]
-        public int GameId { get; set; }
+        public int? GameId { get; set; }
 
         [Required]
         // You want to be able to enter 0 when editing quantity purchased...
         //[Range(0, int.MaxValue, ErrorMessage = "The field {0} must be greater than {1}.")]
 
         public int Quantity { get; set; }
+
+
+        public virtual string CustomerName { get; set; }
+        public virtual string GameName { get; set; }
+
     }
 }

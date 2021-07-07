@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace GamerGateway.Data
 {
+    public enum State { AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY }
     public class Order
     {
         [Key]
@@ -36,7 +37,7 @@ namespace GamerGateway.Data
         public string City { get; set; }
 
         [Required]
-        public string State { get; set; }
+        public State State { get; set; }
 
         [Required]
         public string ZipCode { get; set; }

@@ -19,8 +19,7 @@ namespace GamerGateway.Data
         [ForeignKey(nameof(GameId))]
         public virtual Game Game { get; set; }
 
-        // Testing
-        public virtual List<Game> Games { get; set; }
+        public virtual string GameName { get; set; }
 
         // Make Decimal with one point
         [Required]

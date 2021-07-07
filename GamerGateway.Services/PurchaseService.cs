@@ -27,7 +27,10 @@ namespace GamerGateway.Services
                     PurchaseId = purchase.PurchaseId,
                     OrderId = purchase.OrderId,
                     GameId = purchase.GameId,
-                    Quantity = purchase.Quantity
+                    Quantity = purchase.Quantity,
+                    //
+                    GameName = purchase.Game.Name,
+                    CustomerName = purchase.Order.FullName
                 };
             }
         }
@@ -57,7 +60,10 @@ namespace GamerGateway.Services
                     PurchaseId = p.PurchaseId,
                     OrderId = p.OrderId,
                     GameId = p.GameId,
-                    Quantity = p.Quantity
+                    Quantity = p.Quantity,
+                    // Why can't I use FullName
+                    CustomerName = p.Order.FirstName,
+                    GameName = p.Game.Name
                 });
 
                 return query.ToArray();

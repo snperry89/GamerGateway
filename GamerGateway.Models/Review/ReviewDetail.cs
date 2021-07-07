@@ -22,5 +22,8 @@ namespace GamerGateway.Models.Review
 
         [Display(Name = "Review Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
+
+        [Display(Name = "Game Name")]
+        public virtual string GameName { get; set; }
     }
 }

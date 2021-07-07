@@ -7,13 +7,13 @@ namespace GamerGateway.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class PurchasesAdded : IMigrationMetadata
+    public sealed partial class AddedReviewModified : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PurchasesAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedReviewModified));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107061647597_PurchasesAdded"; }
+            get { return "202107070052362_AddedReviewModified"; }
         }
         
         string IMigrationMetadata.Source

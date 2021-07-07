@@ -17,8 +17,11 @@ namespace GamerGateway.Data.Migrations
                         GameConsole = c.Int(nullable: false),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Discount = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Review_ReviewId = c.Int(),
                     })
-                .PrimaryKey(t => t.GameId);
+                .PrimaryKey(t => t.GameId)
+                .ForeignKey("dbo.Review", t => t.Review_ReviewId)
+                .Index(t => t.Review_ReviewId);
             
             CreateTable(
                 "dbo.Order",
@@ -29,7 +32,7 @@ namespace GamerGateway.Data.Migrations
                         LastName = c.String(nullable: false),
                         Address = c.String(nullable: false),
                         City = c.String(nullable: false),
-                        State = c.String(nullable: false),
+                        State = c.Int(nullable: false),
                         ZipCode = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.OrderId);
@@ -42,6 +45,8 @@ namespace GamerGateway.Data.Migrations
                         OrderId = c.Int(nullable: false),
                         GameId = c.Int(nullable: false),
                         Quantity = c.Int(nullable: false),
+                        GameName = c.String(),
+                        CustomerName = c.String(),
                     })
                 .PrimaryKey(t => t.PurchaseId)
                 .ForeignKey("dbo.Game", t => t.GameId, cascadeDelete: true)
@@ -57,8 +62,8 @@ namespace GamerGateway.Data.Migrations
                         GameId = c.Int(nullable: false),
                         Rating = c.Int(nullable: false),
                         Comment = c.String(),
-                        ReviewDate = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedDate = c.DateTimeOffset(precision: 7),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.ReviewId)
                 .ForeignKey("dbo.Game", t => t.GameId, cascadeDelete: true)
@@ -142,6 +147,7 @@ namespace GamerGateway.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Game", "Review_ReviewId", "dbo.Review");
             DropForeignKey("dbo.Review", "GameId", "dbo.Game");
             DropForeignKey("dbo.Purchase", "OrderId", "dbo.Order");
             DropForeignKey("dbo.Purchase", "GameId", "dbo.Game");
@@ -152,6 +158,7 @@ namespace GamerGateway.Data.Migrations
             DropIndex("dbo.Review", new[] { "GameId" });
             DropIndex("dbo.Purchase", new[] { "GameId" });
             DropIndex("dbo.Purchase", new[] { "OrderId" });
+            DropIndex("dbo.Game", new[] { "Review_ReviewId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");

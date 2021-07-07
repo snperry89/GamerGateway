@@ -16,13 +16,13 @@ namespace GamerGateway.Data
         public int PurchaseId { get; set; }
 
         [Required]
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
 
         [ForeignKey(nameof(OrderId))]
         public virtual Order Order { get; set; }
 
         [Required]
-        public int GameId { get; set; }
+        public int? GameId { get; set; }
 
         [ForeignKey(nameof(GameId))]
         public virtual Game Game { get; set; }
@@ -32,5 +32,8 @@ namespace GamerGateway.Data
 
         public int Quantity { get; set; }
 
+        // 
+        public virtual string GameName { get; set; }
+        public virtual string CustomerName { get; set; }
     }
 }

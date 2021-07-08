@@ -22,3 +22,22 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*TESTING BACKGROUND OF DIV*/
+.page-background-class {
+    background-image:url(../Content/Images/SMBbackground.jpg);
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position-x: right;
+}
+
+.featured {
+    float: center;
+    position: relative;
+    width: 100%;
+    margin: 3.0em 0.5em 2.0em 0.5em;
+    padding: 1.0em;
+    background-color: #fff;
+    border: #ccc solid 1px;
+    border-radius: 0.6em;
+}

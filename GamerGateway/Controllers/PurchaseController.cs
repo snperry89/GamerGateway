@@ -15,6 +15,7 @@ namespace GamerGateway.Controllers
         // Testing
         private ApplicationDbContext _db = new ApplicationDbContext();
 
+
         private PurchaseService CreatePurchaseService()
         {
             // Get current loggged in user
@@ -90,6 +91,7 @@ namespace GamerGateway.Controllers
         public ActionResult Edit(int id)
         {
             var purchase = CreatePurchaseService().GetPurchaseDetailsById(id);
+            ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
 
             return View(new PurchaseEdit
             {

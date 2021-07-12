@@ -81,7 +81,7 @@ textarea {
 }
 
 .navbar-nav li {
-    padding-right: 20px;
+    padding-block: 10px;
 }
 
 .nav-link {
@@ -158,4 +158,43 @@ hr.light-100 {
     margin-top: .8rem;
     margin-bottom: 1rem;
 }
+
+/*.navbar img{
+    height: 90%;
+    width: 10%;
+}*/
+
+/*a.ggbutton {
+    background: url(../Images/GGLogo2.png) no-repeat top left;
+    display: block;
+    width: 150px;
+    height: 150px;
+    text-indent: -9999px;
+}*/
+
+/*ul.links {
+    list-style-type: none;
+}*/
+
+/*.ul.links li {
+    display: inline-block;
+    border-left: 1px solid black;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.ul.links li:first-child {
+    border-left: 0;
+    padding-left: 0;
+    margin-left: 0;
+}*/
+
+.links img{
+    height:50%;
+    width:50%;
+    padding-left: 0;
+}
+
+
+
     

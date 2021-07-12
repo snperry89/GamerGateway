@@ -189,6 +189,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\CrackleTexture.jpg" />
     <Content Include="Content\Images\GGLogo.png" />
+    <Content Include="Content\Images\GGLogo2.png" />
+    <Content Include="Content\Images\GGLogo3.png" />
     <Content Include="Content\Images\SMBbackground.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

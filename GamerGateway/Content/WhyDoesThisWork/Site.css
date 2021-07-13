@@ -2,23 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/*h1{
-    font-family: 'Roboto', sans-serif;
-    color: #222;
+/*.header {
+    max-height: 500px;
+    background-color: pink;
+    padding: 5px;
 }*/
-
-/*.html {
-    font-family: 'Orbitron', sans-serif;
-    color: #222;
-}*/
-
+html body {
+    background-color: lightgrey;
+    color: black;
+}
 .jumbotron {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-}
-
-.container-text {
-    font-family: 'Orbitron';
+    color: black;
 }
 
 .fa-gamepad {
@@ -30,7 +26,6 @@
 .fa-steam {
     color: black;
 }
-
 /*.body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -45,21 +40,18 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
     white-space: normal;
 }
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
-
 /*TESTING BACKGROUND OF DIV*/
 .page-background-class {
     background-image: url(../Content/Images/SMBbackground.jpg);
@@ -67,7 +59,6 @@ textarea {
     background-size: contain;
     background-position-x: right;
 }
-
 .featured {
     float: center;
     position: relative;
@@ -79,11 +70,9 @@ textarea {
     border: #ccc solid 1px;
     border-radius: 0.6em;
 }
-
 .navbar-nav li {
     padding-block: 10px;
 }
-
 .nav-link {
     font-size: 1.1em !important;
 }
@@ -135,7 +124,7 @@ textarea {
     .fa-google-plus-g:hover,
     .fa-instagram:hover,
     .fa-youtube:hover {
-        color: #d5d5d5;
+        color: navy;
     }
     footer {
         background-color: #3f3f3f;

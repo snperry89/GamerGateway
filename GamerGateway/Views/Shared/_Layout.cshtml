@@ -5,20 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Gamer Gateway</title>
     <link href="~/Content/WhyDoesThisWork/Site.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="shortcut icon" href="~/Content/Images/GGIcon40x40.jpg" />
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-</head>
-    @*TESTING*@
-    @*<link href="@Url.Content("~/Content/WhyDoesThisWork/Site.css") rel="stylesheet" type="text/css" />
-        <script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
-        <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>*@
-
-
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
-
-
 </head>
 <body>
 
@@ -32,8 +22,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>-->
-                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            <!--</div>
+    @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+    <!--</div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -48,31 +38,31 @@
             </div>
         </div>
     </div>-->
-
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-            <!--<a class="navbar-brand" href="~/Home/"><img src="~/Content/Images/GGLogo2.png"--> @*height: 55px; width: 190px;*@ <!--/>-->
+    <div class="header">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            @*</a>*@
-            <div class="navbar-collapse collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav media-left auto">
-                    @*<li class="active">@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    @*<li>@Html.ActionLink("GamerGatewayButton", "Index", "Home", null, new { @class = "ggbutton" }) </li>*@
-                    <li> <a href="@Url.Action("Index", "Home", "Home")" title="GGHome" class="links"</li>
-                    <img alt="GGHome" src="@Url.Content("~/Content/Images/GGLogo4.png")" />
-                    <li>@Html.ActionLink("Games", "Index", "Game")</li>
-                    <li>@Html.ActionLink("Orders", "Index", "Order")</li>
-                    <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
-                    <li>@Html.ActionLink("Purchases", "Index", "Purchase")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+                @*</a>*@
+                <div class="navbar-collapse collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav media-left auto">
+                        @*<li class="active">@Html.ActionLink("Home", "Index", "Home")</li>*@
+                        @*<li>@Html.ActionLink("GamerGatewayButton", "Index", "Home", null, new { @class = "ggbutton" }) </li>*@
+                        <li> <a href="@Url.Action("Index", "Home", "Home")" title="GGHome" class="links"><img alt="GGHome" src="@Url.Content("~/Content/Images/GGLogo4.png")" /></a></li>
+
+                        <li>@Html.ActionLink("Games", "Index", "Game")</li>
+                        <li>@Html.ActionLink("Orders", "Index", "Order")</li>
+                        <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
+                        <li>@Html.ActionLink("Purchases", "Index", "Purchase")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.Partial("_LoginPartial")</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -108,13 +98,11 @@
                     <div class="col-12">
                         <hr class="light-100" />
                         <h5>&copy; @DateTime.Now.Year - Gamer Gateway</h5>
-
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

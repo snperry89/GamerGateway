@@ -188,6 +188,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\CrackleTexture.jpg" />
+    <Content Include="Content\Images\GGIcon40x40.jpg" />
     <Content Include="Content\Images\GGLogo.png" />
     <Content Include="Content\Images\GGLogo2.png" />
     <Content Include="Content\Images\GGLogo3.png" />

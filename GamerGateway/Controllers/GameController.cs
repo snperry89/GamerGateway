@@ -23,7 +23,6 @@ namespace GamerGateway.Controllers
 
         public ActionResult Index()
         {
-            //
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new GameService(userId);
             var model = service.GetGameList();
@@ -31,14 +30,12 @@ namespace GamerGateway.Controllers
             return View(model);
         }
 
-        // GET: Game
         public ActionResult Create()
         {
             ViewBag.Title = "New Game";
             return View();
         }
 
-        // POST: Game
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(GameCreate model)
@@ -55,16 +52,12 @@ namespace GamerGateway.Controllers
             return View(model);
         }
 
-        // GET: Details
-        // Game/Details/{id}
         public ActionResult Details(int id)
         {
             var game = CreateGameService().GetGameDetailsById(id);
             return View(game);
         }
 
-        // GET: Edit
-        // Game/Edit/{id}
         public ActionResult Edit(int id)
         {
             var game = CreateGameService().GetGameDetailsById(id);
@@ -77,8 +70,6 @@ namespace GamerGateway.Controllers
             });
         }
 
-        // POST: Edit
-        // Game/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, GameEdit model)
@@ -101,22 +92,6 @@ namespace GamerGateway.Controllers
             return View(model);
         }
 
-        //// GET: Delete
-        //// Game/Delete/{id}
-        //public ActionResult Delete(int id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Game game = Games.Find(id);
-
-        //    if (game == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(game);
-        //}
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)

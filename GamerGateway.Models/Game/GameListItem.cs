@@ -9,7 +9,6 @@ using static GamerGateway.Data.Game;
 
 namespace GamerGateway.Models.Game
 {
-    //public enum Console { PC, PS5, XboxSeriesX, Switch }
     public class GameListItem
     {
         public int GameId { get; set; }

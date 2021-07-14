@@ -79,7 +79,6 @@ namespace GamerGateway.Services
             }
         }
 
-        // Testing Delete
         public bool DeleteGame(int gameId)
         {
             using (var ctx = new ApplicationDbContext())

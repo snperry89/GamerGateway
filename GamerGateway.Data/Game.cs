@@ -27,6 +27,5 @@ namespace GamerGateway.Data
         [Required]
         public decimal Price { get; set; }
 
-        public decimal Discount { get; set; }
     }
 }

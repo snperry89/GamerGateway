@@ -56,7 +56,7 @@ namespace GamerGateway.Services
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException e)
                 {
-                    //Console.WriteLine( e.EntityValidationErrors);
+                    Console.WriteLine(e.EntityValidationErrors);
                     Console.WriteLine( e.InnerException);
                     Console.WriteLine(e.Message);
                     Console.WriteLine(e.Data);
@@ -74,7 +74,6 @@ namespace GamerGateway.Services
                 var query = ctx.Customers.Select(o => new CustomerListItem
                 {
                     CustomerId = o.CustomerId,
-                    //FullName = o.FullName,
                     FirstName = o.FirstName,
                     LastName = o.LastName,
                     Address = o.Address,

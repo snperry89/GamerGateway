@@ -16,7 +16,6 @@ namespace GamerGateway.Models.Purchase
 
         public int Quantity { get; set; }
 
-        //
         public virtual string GameName { get; set; }
         public virtual string CustomerName { get; set; }
     }

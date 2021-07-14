@@ -12,22 +12,18 @@ namespace GamerGateway.Controllers
 {
     public class PurchaseController : Controller
     {
-        // Testing
         private ApplicationDbContext _db = new ApplicationDbContext();
 
 
         private PurchaseService CreatePurchaseService()
         {
-            // Get current loggged in user
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new PurchaseService(userId);
             return service;
         }
 
-        // GET: Purchase
         public ActionResult Index()
         {
-            //
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new PurchaseService(userId);
             var model = service.GetPurchaseList();
@@ -35,27 +31,20 @@ namespace GamerGateway.Controllers
             return View(model);
         }
 
-        // GET: Purchase
         public ActionResult Create()
         {
-            // Testing 
             ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
             ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
-            // Not Sure
             ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
 
-
-            //ViewBag.Title = "New Purchase";
             return View();
         }
 
-        // POST: Purchase
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(PurchaseCreate model)
         {
             if (!ModelState.IsValid)
-            // Testing
             {
                 ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
                 ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
@@ -70,24 +59,15 @@ namespace GamerGateway.Controllers
 
             ModelState.AddModelError("", "Error adding a purchase");
 
-            // Testing
-
-            //ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
-            //ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
-            //ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
             return View(model);
         }
 
-        // GET: Details
-        // Purchase/Details/{id}
         public ActionResult Details(int id)
         {
             var purchase = CreatePurchaseService().GetPurchaseDetailsById(id);
             return View(purchase);
         }
 
-        // GET: Edit
-        // Purchase/Edit/{id}
         public ActionResult Edit(int id)
         {
             var purchase = CreatePurchaseService().GetPurchaseDetailsById(id);
@@ -102,8 +82,6 @@ namespace GamerGateway.Controllers
             });
         }
 
-        // POST: Edit
-        // Purchase/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, PurchaseEdit model)
@@ -128,10 +106,6 @@ namespace GamerGateway.Controllers
                 TempData["Save Result"] = "Purchase updated";
                 return RedirectToAction("Index");
             }
-
-            //ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
-            //ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
-            //ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
 
             ModelState.AddModelError("", "Error adding a purchase");
             return View(model);

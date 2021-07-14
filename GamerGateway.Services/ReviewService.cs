@@ -57,8 +57,6 @@ namespace GamerGateway.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx.Reviews.
-                    //
-                    //.Where(r => r.OwnerId == _userId)
                     Select(r => new ReviewListItem
                     {
                         ReviewId = r.ReviewId,
@@ -89,7 +87,6 @@ namespace GamerGateway.Services
             }
         }
 
-        // Testing Delete
         public bool DeleteReview(int reviewId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -97,7 +94,7 @@ namespace GamerGateway.Services
                 var entity =
                     ctx
                         .Reviews
-                        .Single(e => e.ReviewId == reviewId /*&& e.OwnerId == _userId*/);
+                        .Single(e => e.ReviewId == reviewId);
 
                 ctx.Reviews.Remove(entity);
 

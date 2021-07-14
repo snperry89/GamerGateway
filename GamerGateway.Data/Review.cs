@@ -21,7 +21,6 @@ namespace GamerGateway.Data
 
         public virtual string GameName { get; set; }
 
-        // Make Decimal with one point
         [Required]
         [Range(0, 5, ErrorMessage = "The Rating must be between 0-5")]
         public int Rating { get; set; }

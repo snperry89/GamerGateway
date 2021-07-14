@@ -15,13 +15,11 @@ namespace GamerGateway.Controllers
         ApplicationDbContext _db = new ApplicationDbContext();
         private ReviewService CreateReviewService()
         {
-            // Get current loggged in user
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ReviewService(userId);
             return service;
         }
 
-        // GET: Review
         public ActionResult Index()
         {
             //var model = new ReviewListItem[0];

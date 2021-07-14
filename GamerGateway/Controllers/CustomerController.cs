@@ -15,17 +15,13 @@ namespace GamerGateway.Controllers
         ApplicationDbContext _db = new ApplicationDbContext();
         private CustomerService CreateCustomerService()
         {
-            // Get current loggged in user
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CustomerService(userId);
             return service;
         }
 
-        // GET: Customer
         public ActionResult Index()
         {
-            //var model = new CustomerListItem[0];
-            //return View(model);
             return View(CreateCustomerService().GetCustomerList());
         }
 

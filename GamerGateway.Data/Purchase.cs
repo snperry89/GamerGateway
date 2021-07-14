@@ -10,8 +10,6 @@ namespace GamerGateway.Data
 {
     public class Purchase
     {
-
-        // Checkbox add to Customer instead shopping cart view
         [Key]
         public int PurchaseId { get; set; }
 

@@ -37,8 +37,6 @@ namespace GamerGateway.Data
         public State State { get; set; }
 
         [Required]
-        //[Range(0, 6, ErrorMessage = "The Zip Code must contain 5 characters")]
-        //[RegularExpression(@"/^[0-9]*$/", ErrorMessage = "The Zip Code can only contain numbers")]
         public string ZipCode { get; set; }
 
 

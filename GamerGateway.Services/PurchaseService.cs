@@ -28,7 +28,6 @@ namespace GamerGateway.Services
                     CustomerId = purchase.CustomerId,
                     GameId = purchase.GameId,
                     Quantity = purchase.Quantity,
-                    //
                     GameName = purchase.Game.Name,
                     CustomerName = purchase.Customer.FullName
                 };
@@ -61,7 +60,6 @@ namespace GamerGateway.Services
                     CustomerId = p.CustomerId,
                     GameId = p.GameId,
                     Quantity = p.Quantity,
-                    // Why can't I use FullName
                     CustomerName = p.Customer.FirstName,
                     GameName = p.Game.Name
                 });
@@ -83,7 +81,6 @@ namespace GamerGateway.Services
             }
         }
 
-        // Testing Delete
         public bool DeletePurchase(int purchaseId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -91,7 +88,7 @@ namespace GamerGateway.Services
                 var entity =
                     ctx
                         .Purchases
-                        .Single(e => e.PurchaseId == purchaseId /*&& e.OwnerId == _userId)*/);
+                        .Single(e => e.PurchaseId == purchaseId);
 
                 ctx.Purchases.Remove(entity);
 

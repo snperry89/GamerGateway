@@ -25,12 +25,12 @@ namespace GamerGateway.Services
                 return new PurchaseDetail
                 {
                     PurchaseId = purchase.PurchaseId,
-                    OrderId = purchase.OrderId,
+                    CustomerId = purchase.CustomerId,
                     GameId = purchase.GameId,
                     Quantity = purchase.Quantity,
                     //
                     GameName = purchase.Game.Name,
-                    CustomerName = purchase.Order.FullName
+                    CustomerName = purchase.Customer.FullName
                 };
             }
         }
@@ -41,7 +41,7 @@ namespace GamerGateway.Services
             {
                 var newPurchase = new Purchase()
                 {
-                    OrderId = model.OrderId,
+                    CustomerId = model.CustomerId,
                     GameId = model.GameId,
                     Quantity = model.Quantity
                 };
@@ -58,11 +58,11 @@ namespace GamerGateway.Services
                 var query = ctx.Purchases.Select(p => new PurchaseListItem
                 {
                     PurchaseId = p.PurchaseId,
-                    OrderId = p.OrderId,
+                    CustomerId = p.CustomerId,
                     GameId = p.GameId,
                     Quantity = p.Quantity,
                     // Why can't I use FullName
-                    CustomerName = p.Order.FirstName,
+                    CustomerName = p.Customer.FirstName,
                     GameName = p.Game.Name
                 });
 
@@ -75,7 +75,7 @@ namespace GamerGateway.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var purchase = ctx.Purchases.Single(g => g.PurchaseId == model.PurchaseId);
-                purchase.OrderId = model.OrderId;
+                purchase.CustomerId = model.CustomerId;
                 purchase.GameId = model.GameId;
                 purchase.Quantity = model.Quantity;
 

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GamerGateway.Models.Order.OrderListItem>
+﻿@model IEnumerable<GamerGateway.Models.Customer.CustomerListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.OrderId)
+            @Html.DisplayNameFor(model => model.CustomerId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -38,7 +38,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderId)
+            @Html.DisplayFor(modelItem => item.CustomerId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
@@ -59,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.ZipCode)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.OrderId  }) |
-            @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.CustomerId  }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CustomerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CustomerId })
         </td>
     </tr>
 }

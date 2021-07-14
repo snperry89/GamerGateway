@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Gamer Gateway</title>
-    <link href="~/Content/WhyDoesThisWork/Site.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="shortcut icon" href="~/Content/Images/GGIcon40x40.jpg" />
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     @Styles.Render("~/Content/css")
@@ -28,7 +28,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Games", "Index", "Game")</li>
-                    <li>@Html.ActionLink("Orders", "Index", "Order")</li>
+                    <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
                     <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
                     <li>@Html.ActionLink("Purchases", "Index", "Purchase")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
@@ -59,7 +59,7 @@
                 <ul class="navbar-nav navbar-right">
                     <li><a href="@Url.Action("Index", "Home", "Home")" title="GGHome" class="links"><img alt="GGHome" src="@Url.Content("~/Content/Images/GGLogo4.png")" /></a></li>
                     <li>@Html.ActionLink("Games", "Index", "Game")</li>
-                    <li>@Html.ActionLink("Orders", "Index", "Order")</li>
+                    <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
                     <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
                     <li>@Html.ActionLink("Purchases", "Index", "Purchase")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>

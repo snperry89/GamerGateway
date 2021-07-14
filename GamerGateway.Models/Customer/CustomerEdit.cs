@@ -6,10 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GamerGateway.Models.Order
+namespace GamerGateway.Models.Customer
 {
-    public class OrderCreate
+    public class CustomerEdit
     {
+        public int CustomerId { get; set; }
+
         [Required]
         public string FirstName { get; set; }
 

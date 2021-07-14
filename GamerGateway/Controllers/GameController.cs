@@ -16,13 +16,11 @@ namespace GamerGateway.Controllers
     {
         private GameService CreateGameService()
         {
-            // Get current loggged in user
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new GameService(userId);
             return service;
         }
 
-        // GET: Game
         public ActionResult Index()
         {
             //
@@ -31,7 +29,6 @@ namespace GamerGateway.Controllers
             var model = service.GetGameList();
 
             return View(model);
-            //return View(CreateGameService().GetGameList());
         }
 
         // GET: Game

@@ -12,7 +12,7 @@ namespace GamerGateway.Models.Purchase
         public int PurchaseId { get; set; }
 
         [Required]
-        public int? OrderId { get; set; }
+        public int? CustomerId { get; set; }
 
         [Required]
         public int? GameId { get; set; }

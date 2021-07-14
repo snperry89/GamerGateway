@@ -11,7 +11,6 @@ namespace GamerGateway.Data
     public enum GameConsole { PC, PS5, XboxSeriesX, NintendoSwitch }
     public class Game
     {
-        // .Net will automatically detect this is primary key
         [Key]
         public int GameId { get; set; }
 
@@ -29,6 +28,5 @@ namespace GamerGateway.Data
         public decimal Price { get; set; }
 
         public decimal Discount { get; set; }
-        //public virtual List<Review> Reviews { get; set; }
     }
 }

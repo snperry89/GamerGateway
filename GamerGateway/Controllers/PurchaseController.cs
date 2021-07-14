@@ -39,7 +39,7 @@ namespace GamerGateway.Controllers
         public ActionResult Create()
         {
             // Testing 
-            ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+            ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
             ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
             // Not Sure
             ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
@@ -57,7 +57,7 @@ namespace GamerGateway.Controllers
             if (!ModelState.IsValid)
             // Testing
             {
-                ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+                ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
                 ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
                 ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
                 return View(model);
@@ -72,7 +72,7 @@ namespace GamerGateway.Controllers
 
             // Testing
 
-            //ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+            //ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
             //ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
             //ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
             return View(model);
@@ -97,7 +97,7 @@ namespace GamerGateway.Controllers
             {
                 PurchaseId = purchase.PurchaseId,
                 GameId = purchase.GameId,
-                OrderId = purchase.OrderId,
+                CustomerId = purchase.CustomerId,
                 Quantity = purchase.Quantity
             });
         }
@@ -110,7 +110,7 @@ namespace GamerGateway.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+                ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
                 ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
                 ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
 
@@ -129,7 +129,7 @@ namespace GamerGateway.Controllers
                 return RedirectToAction("Index");
             }
 
-            //ViewBag.OrderId = new SelectList(_db.Orders.ToList(), "OrderId", "FullName");
+            //ViewBag.CustomerId = new SelectList(_db.Customers.ToList(), "CustomerId", "FullName");
             //ViewBag.GameId = new SelectList(_db.Games.ToList(), "GameId", "Name");
             //ViewBag.PurchaseId = new SelectList(_db.Purchases.ToList(), "PurchaseId", "Game");
 

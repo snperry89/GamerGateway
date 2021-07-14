@@ -56,16 +56,7 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202107070034072_InitialCreate.cs" />
-    <Compile Include="Migrations\202107070034072_InitialCreate.Designer.cs">
-      <DependentUpon>202107070034072_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107070052362_AddedReviewModified.cs" />
-    <Compile Include="Migrations\202107070052362_AddedReviewModified.Designer.cs">
-      <DependentUpon>202107070052362_AddedReviewModified.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="Review.cs" />
@@ -73,14 +64,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107070034072_InitialCreate.resx">
-      <DependentUpon>202107070034072_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107070052362_AddedReviewModified.resx">
-      <DependentUpon>202107070052362_AddedReviewModified.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

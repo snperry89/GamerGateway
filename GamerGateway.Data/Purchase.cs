@@ -11,15 +11,15 @@ namespace GamerGateway.Data
     public class Purchase
     {
 
-        // Checkbox add to order instead shopping cart view
+        // Checkbox add to Customer instead shopping cart view
         [Key]
         public int PurchaseId { get; set; }
 
         [Required]
-        public int? OrderId { get; set; }
+        public int? CustomerId { get; set; }
 
-        [ForeignKey(nameof(OrderId))]
-        public virtual Order Order { get; set; }
+        [ForeignKey(nameof(CustomerId))]
+        public virtual Customer Customer { get; set; }
 
         [Required]
         public int? GameId { get; set; }
@@ -32,8 +32,8 @@ namespace GamerGateway.Data
 
         public int Quantity { get; set; }
 
-        // 
         public virtual string GameName { get; set; }
+
         public virtual string CustomerName { get; set; }
     }
 }

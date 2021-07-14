@@ -11,7 +11,7 @@ namespace GamerGateway.Models.Purchase
     {
         [Required]
         [Display(Name = "Customer")]
-        public int OrderId { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
         [Display(Name = "Game")]

@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GamerGateway.Models.Order
+namespace GamerGateway.Models.Customer
 {
-    public class OrderListItem
+    public class CustomerDetail
     {
-        public int OrderId { get; set; }
+        public int CustomerId { get; set; }
 
-        public string FullName { get; set; }
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

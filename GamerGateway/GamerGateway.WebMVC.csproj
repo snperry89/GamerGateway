@@ -188,11 +188,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\CrackleTexture.jpg" />
+    <Content Include="Content\Images\EpicGamesStore.png" />
     <Content Include="Content\Images\GGIcon40x40.jpg" />
     <Content Include="Content\Images\GGLogo.png" />
     <Content Include="Content\Images\GGLogo2.png" />
     <Content Include="Content\Images\GGLogo3.png" />
+    <Content Include="Content\Images\OriginStore.png" />
     <Content Include="Content\Images\SMBbackground.jpg" />
+    <Content Include="Content\Images\SteamHome.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<GamerGateway.Models.Review.ReviewListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer Reviews</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReviewId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GameName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rating)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comment)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedUtc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModifiedUtc)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ReviewId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ReviewId })
+    </td>
+</tr>
+    }
+
+</table>

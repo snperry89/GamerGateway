@@ -54,12 +54,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Migrations\202107131937316_InitialCreate.cs" />
+    <Compile Include="Migrations\202107131937316_InitialCreate.Designer.cs">
+      <DependentUpon>202107131937316_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107140234477_NavBar.cs" />
+    <Compile Include="Migrations\202107140234477_NavBar.Designer.cs">
+      <DependentUpon>202107140234477_NavBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs" />
+    <Compile Include="Review.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107131937316_InitialCreate.resx">
+      <DependentUpon>202107131937316_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107140234477_NavBar.resx">
+      <DependentUpon>202107140234477_NavBar.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

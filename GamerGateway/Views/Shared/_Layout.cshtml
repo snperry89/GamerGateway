@@ -3,40 +3,85 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Gamer Gateway</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="shortcut icon" href="~/Content/Images/GGIcon40x40.jpg" />
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+    <!--Top Contact Bar-->
+    <div class="top-bar">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="col-12 text-right">
+                <p><a href="tel:+18885555555">Call Customer Support at 1-(800)-1GITGUD</a></p>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        </div>
+    </div>
+
+    <!--Main Nav Bar-->
+    <nav class="navbar bg-light navbar-light navbar-expand-lg">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-hidden="false" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <ul class="navbar-nav navbar-right">
+                    <li><a href="@Url.Action("Index", "Home", "Home")" title="GGHome" class="links"><img alt="GGHome" src="@Url.Content("~/Content/Images/GGLogo4.png")" /></a></li>
+                    <li>@Html.ActionLink("Games", "Index", "Game")</li>
+                    <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
+                    <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
+                    <li>@Html.ActionLink("Purchases", "Index", "Purchase")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+
         </div>
-    </div>
+    </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <hr class="light" />
+                        <p>800-555-GAME</p>
+                        <p>owner@gamergateway.net</p>
+                        <p>GG Easeway</p>
+                        <p>Bethesda, MD, 20810</p>
+                    </div>
+                    <div class="col-md-4">
+                        <hr class="light" />
+                        <h5>Our Hours</h5>
+                        <hr class="light" />
+                        <p>ErrDay: 9am-5pm</p>
+                    </div>
+                    <div class="col-md-4">
+                        <hr class="light" />
+                        <h5>Service Areas</h5>
+                        <hr class="light" />
+                        <p>Doom Station, Mars, 00666</p>
+                        <p>MarioLand, Mushroom Kingdom, 12345</p>
+                        <p>Raccoon City, Arklay County, 46774</p>
+                        <p>USG Ishimura, Deep Space, 00000</p>
+                    </div>
+                    <div class="col-12">
+                        <hr class="light-100" />
+                        <h5>&copy; @DateTime.Now.Year - Gamer Gateway</h5>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

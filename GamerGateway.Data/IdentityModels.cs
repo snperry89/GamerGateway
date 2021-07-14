@@ -32,7 +32,10 @@ namespace GamerGateway.Data
             return new ApplicationDbContext();
         }
 
-        // This is where DbSets will go
+        public DbSet<Game> Games { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -168,8 +168,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,6 +187,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\CrackleTexture.jpg" />
+    <Content Include="Content\Images\GGIcon40x40.jpg" />
+    <Content Include="Content\Images\GGLogo.png" />
+    <Content Include="Content\Images\GGLogo2.png" />
+    <Content Include="Content\Images\GGLogo3.png" />
+    <Content Include="Content\Images\SMBbackground.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -234,6 +244,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Game\Edit.cshtml" />
+    <Content Include="Views\Game\Delete.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
+    <Content Include="Views\Review\Create.cshtml" />
+    <Content Include="Views\Review\Details.cshtml" />
+    <Content Include="Views\Review\Edit.cshtml" />
+    <Content Include="Views\Review\Delete.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Purchase\Create.cshtml" />
+    <Content Include="Views\Purchase\Details.cshtml" />
+    <Content Include="Views\Purchase\Edit.cshtml" />
+    <Content Include="Views\Purchase\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -255,6 +286,14 @@
     <ProjectReference Include="..\GamerGateway.Data\GamerGateway.Data.csproj">
       <Project>{F7B20326-9BC9-4B9D-8F50-E4059793B175}</Project>
       <Name>GamerGateway.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GamerGateway.Models\GamerGateway.Models.csproj">
+      <Project>{ce6fcfa6-0595-48f4-adfa-5e9d1bb573d9}</Project>
+      <Name>GamerGateway.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GamerGateway.Services\GamerGateway.Services.csproj">
+      <Project>{b5e39ada-8a73-4d5f-8c84-9dce572f4f26}</Project>
+      <Name>GamerGateway.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -22,8 +22,6 @@ namespace GamerGateway.Controllers
 
         public ActionResult Index()
         {
-            //var model = new ReviewListItem[0];
-            //return View(model);
             return View(CreateReviewService().GetReviewList());
         }
 
@@ -65,7 +63,6 @@ namespace GamerGateway.Controllers
                 GameId = review.GameId,
                 Rating = review.Rating,
                 Comment = review.Comment,
-                //ReviewDate = review.ReviewDate
             });
         }
 
